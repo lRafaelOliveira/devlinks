@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DevLinks</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://kazuhikoarase.github.io/qrcode-generator/js/qrcode.js"></script>
 </head>
 
 <body>
@@ -25,15 +26,25 @@
       <span></span>
     </div>
 
-    <ul>
+    <ul id="lista-links">
       <li>
         <a href="https://rafaeloliveira.dev.br">Ver meu portfólio</a>
       </li>
 
       <li>
-        <a href="#" target="_blank">Gerar QrCode</a>
+        <a href="javascript:;" onclick="ActiveGerarQrCode()">Gerar QrCode</a>
       </li>
     </ul>
+    <div id="gerarqrcode">
+      <label for="link-qrcode"> Digite o Link que Deseja Gerar o QrCode
+        <input class="input-all" id="link-qrcode" />
+      </label>
+      <ul>
+        <li onclick="voltarGerarQrCode()">voltar</li>
+        <li onclick="gerarQrCode()">Gerar</li>
+      </ul>
+      <div id="qrcode"></div>
+    </div>
     <div id="social-links">
       <a href="https://github.com/lRafaelOliveira" target="_blank">
         <ion-icon name="logo-github"></ion-icon>
